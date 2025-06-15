@@ -15,7 +15,6 @@ export const styles = StyleSheet.create({
     color: '#8e8e93',
   },
   
-  // Login Screen
   loginContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -43,7 +42,6 @@ export const styles = StyleSheet.create({
     color: '#8e8e93',
   },
   
-  // Header
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -65,7 +63,6 @@ export const styles = StyleSheet.create({
     color: '#1c1c1e',
   },
   
-  // Sections
   section: {
     backgroundColor: 'white',
     padding: 20,
@@ -85,7 +82,6 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   
-  // Form Elements
   inputContainer: {
     marginBottom: 16,
   },
@@ -111,7 +107,6 @@ export const styles = StyleSheet.create({
     textAlignVertical: 'top',
   },
   
-  // Buttons
   loginButton: {
     marginTop: 16,
     marginBottom: 16,
@@ -122,7 +117,6 @@ export const styles = StyleSheet.create({
     marginBottom: 8,
   },
   
-  // Text
   hint: {
     textAlign: 'center',
     fontSize: 14,
@@ -139,7 +133,6 @@ export const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
   
-  // Document Items
   documentItem: {
     backgroundColor: '#f9f9f9',
     padding: 16,
@@ -223,7 +216,6 @@ export const styles = StyleSheet.create({
     gap: 8,
   },
 
-  // Buyer/Seller sections
   buyerSection: {
     backgroundColor: '#ffebee',
     padding: 16,
@@ -253,7 +245,6 @@ export const styles = StyleSheet.create({
     color: '#1976d2',
   },
 
-  // Success/Error states
   successText: {
     color: '#34c759',
     fontSize: 16,
@@ -269,7 +260,6 @@ export const styles = StyleSheet.create({
     marginVertical: 8,
   },
 
-  // Loading states
   loadingContainer: {
     flexDirection: 'row',
     alignItems: 'center',

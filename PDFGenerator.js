@@ -7,14 +7,14 @@ import { styles } from './AppStyles';
 export default function PDFGenerator({ db, savedDocuments, onDocumentGenerated, onRemoveDocument }) {
   const [conteudo, setConteudo] = useState('');
   
-  // Campos do Comprador
+  // Comprador
   const [compradorNome, setCompradorNome] = useState('');
   const [compradorEndereco, setCompradorEndereco] = useState('');
   const [compradorBairro, setCompradorBairro] = useState('');
   const [compradorCidade, setCompradorCidade] = useState('');
   const [compradorCep, setCompradorCep] = useState('');
   
-  // Campos do Vendedor
+  // Vendedor
   const [vendedorNome, setVendedorNome] = useState('');
   const [vendedorEndereco, setVendedorEndereco] = useState('');
   const [vendedorBairro, setVendedorBairro] = useState('');
@@ -22,7 +22,7 @@ export default function PDFGenerator({ db, savedDocuments, onDocumentGenerated, 
   const [vendedorCep, setVendedorCep] = useState('');
   const [vendedorCnpj, setVendedorCnpj] = useState('');
 
-  // Gera HTML com campos de comprador e vendedor
+  // Gera HTML 
   function generateHTML() {
     const currentDate = new Date().toLocaleDateString('pt-BR');
     
@@ -124,7 +124,6 @@ export default function PDFGenerator({ db, savedDocuments, onDocumentGenerated, 
   }
 
   async function generatePDF() {
-    // Verificar se pelo menos um campo foi preenchido
     const hasCompradorData = compradorNome || compradorEndereco || compradorBairro || compradorCidade || compradorCep;
     const hasVendedorData = vendedorNome || vendedorEndereco || vendedorBairro || vendedorCidade || vendedorCep || vendedorCnpj;
     const hasContent = conteudo.trim();

@@ -12,7 +12,7 @@ export default function QRCodeGenerator({ db }) {
   const [qrCodeValue, setQrCodeValue] = useState('');
   const qrCodeRef = useRef(null);
   
-  // Link pré-definido
+  // Link Instagram
   const instagramLink = 'https://www.instagram.com/amoraprettybags/';
 
   function isValidURL(string) {
@@ -24,7 +24,6 @@ export default function QRCodeGenerator({ db }) {
     }
   }
 
-  // Gera QR Code do Instagram pré-definido
   function generateInstagramQR() {
     setQrCodeValue(instagramLink);
     setShowQRCode(true);
@@ -70,7 +69,6 @@ export default function QRCodeGenerator({ db }) {
     Alert.alert('Sucesso', 'QR Code gerado!');
   }
 
-  // Compartilha QR Code como imagem
 
   async function shareQRCodeImage() {
     if (!qrCodeValue) {
@@ -79,7 +77,6 @@ export default function QRCodeGenerator({ db }) {
     }
 
     try {
-      // Pega o SVG do QR Code
       if (qrCodeRef.current) {
         qrCodeRef.current.toDataURL((dataURL) => {
           if (dataURL) {
@@ -87,13 +84,11 @@ export default function QRCodeGenerator({ db }) {
             const filename = `qrcode_${Date.now()}.png`;
             const fileUri = FileSystem.documentDirectory + filename;
             
-            // Remove o prefixo data:image/png;base64,
             const base64Data = dataURL.replace(/^data:image\/png;base64,/, '');
             
             FileSystem.writeAsStringAsync(fileUri, base64Data, {
               encoding: FileSystem.EncodingType.Base64,
             }).then(() => {
-              // Compartilha a imagem
               Sharing.shareAsync(fileUri, {
                 mimeType: 'image/png',
                 dialogTitle: 'Compartilhar QR Code'
@@ -130,7 +125,6 @@ export default function QRCodeGenerator({ db }) {
 
       <Button title="Gerar QR Code" onPress={generateQRCode} />
 
-      {/* Botão para gerar QR Code do Instagram */}
       <View style={styles.generateButton}>
         <Button 
           title="QR Code Instagram @amoraprettybags" 
